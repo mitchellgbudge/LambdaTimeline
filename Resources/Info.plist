@@ -31,6 +31,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) requires the camera to record video</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>To record audio comments and video post audio</string>
 	<key>NSPhotoLibraryUsageDescription</key>

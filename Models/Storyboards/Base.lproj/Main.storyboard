@@ -99,11 +99,68 @@
                     <connections>
                         <segue destination="1Aw-4e-BW2" kind="show" identifier="AddImagePost" id="jaI-fq-Woc"/>
                         <segue destination="OyM-8q-Icp" kind="show" identifier="ViewImagePost" id="hhs-es-AdQ"/>
+                        <segue destination="HmE-3O-OTJ" kind="show" identifier="AddVideoPost" id="M4E-kc-Mb2"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRz-lg-pQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2156" y="108.39580209895054"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="F7u-dH-ae9">
+            <objects>
+                <viewController id="HmE-3O-OTJ" customClass="CameraViewController" customModule="LambdaTimeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j5n-Un-b6g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBe-xf-jaE" customClass="CameraPreviewView" customModule="LambdaTimeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efN-UE-h5d">
+                                        <rect key="frame" x="150" y="468" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="F5X-Z8-6py"/>
+                                            <constraint firstAttribute="width" constant="75" id="ehx-aR-b7v"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="Record"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="efN-UE-h5d" firstAttribute="centerX" secondItem="lBe-xf-jaE" secondAttribute="centerX" id="Ki1-iX-aNv"/>
+                                    <constraint firstAttribute="bottom" secondItem="efN-UE-h5d" secondAttribute="bottom" id="nLe-Mo-14g"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give your post a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y1c-19-rsj">
+                                <rect key="frame" x="8" y="615" width="359" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lBe-xf-jaE" firstAttribute="trailing" secondItem="fIH-Wa-qbm" secondAttribute="trailing" id="DCf-5m-Nbf"/>
+                            <constraint firstItem="lBe-xf-jaE" firstAttribute="leading" secondItem="fIH-Wa-qbm" secondAttribute="leading" id="Qn3-2O-nrc"/>
+                            <constraint firstItem="fIH-Wa-qbm" firstAttribute="bottom" secondItem="lBe-xf-jaE" secondAttribute="bottom" constant="60" id="Uvb-xh-rIs"/>
+                            <constraint firstItem="y1c-19-rsj" firstAttribute="top" secondItem="lBe-xf-jaE" secondAttribute="bottom" constant="8" id="UwT-Y9-u0Z"/>
+                            <constraint firstItem="lBe-xf-jaE" firstAttribute="top" secondItem="fIH-Wa-qbm" secondAttribute="top" id="lBc-ZG-Nqg"/>
+                            <constraint firstItem="fIH-Wa-qbm" firstAttribute="trailing" secondItem="y1c-19-rsj" secondAttribute="trailing" constant="8" id="lgF-G3-oUp"/>
+                            <constraint firstItem="y1c-19-rsj" firstAttribute="leading" secondItem="fIH-Wa-qbm" secondAttribute="leading" constant="8" id="t9M-l8-spo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fIH-Wa-qbm"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="lBe-xf-jaE" id="oZG-Cy-TsE"/>
+                        <outlet property="recordButton" destination="efN-UE-h5d" id="nHR-Ac-bOZ"/>
+                        <outlet property="titleTextField" destination="y1c-19-rsj" id="Dud-fU-0jt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0s-KN-X43" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2149.5999999999999" y="786.65667166416802"/>
         </scene>
         <!--Title-->
         <scene sceneID="kP9-yp-I8H">
@@ -215,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXa-A2-VJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="-922"/>
+            <point key="canvasLocation" x="2943" y="426"/>
         </scene>
         <!--Audio Comment View Controller-->
         <scene sceneID="ZOA-Lr-2dP">
@@ -489,5 +546,6 @@
     </scenes>
     <resources>
         <image name="Feed" width="22" height="22"/>
+        <image name="Record" width="116" height="116"/>
     </resources>
 </document>
